@@ -1,0 +1,50 @@
+# Image API
+
+This is a Flask-based RESTful API for handling image data stored in a database.
+
+## Getting Started
+
+To run the API locally, follow these steps:
+
+1. Install Python 3.x on your system if you haven't already.
+2. Clone this repository to your local machine.
+3. Install the required Python packages by running:
+
+`pip install -r requirements.txt`
+
+4. Prepare your image data CSV file and update the `image_data.csv` file accordingly.
+5. Run the Flask application using the following command:
+
+`python app.py`
+
+6. The API will start running locally. You can access it at `http://localhost:5000`.
+
+## Endpoints
+
+### GET /image_frames
+
+This endpoint retrieves image frames based on the specified depth range.
+
+#### Parameters
+
+- `depth_min`: Minimum depth value (integer).
+- `depth_max`: Maximum depth value (integer).
+
+### Example
+
+To retrieve image frames with depth values between 10 and 20:
+
+`GET http://localhost:5000/image_frames?depth_min=10&depth_max=20`
+
+
+
+## Docker Support
+
+You can also containerize the application using Docker. To build the Docker image, run:
+
+`docker build -t image-api .`
+
+
+To run the Docker container, use:
+
+`docker run -p 5000:5000 image-api`
